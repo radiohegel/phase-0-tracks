@@ -9,9 +9,13 @@ cite {
   margin-top: 10px;
 }
 
-#external-links ul {
+#external-links {
+  position: absolute;
+  margin-left: 756px;
   list-style-type: none;
   padding-left: 0px;
+  width: 200px;
+  display: block;
 }
 
 /* you're welcome to edit the
@@ -29,4 +33,14 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+body {
+  width: 960px;
+}
+
+main {
+  position: absolute;
+  width: 756px; 
+  display: block;
 }
