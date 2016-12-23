@@ -47,7 +47,23 @@ main {
   display: block;
 }
 @media screen and (max-width: 500px) {
-  body {
-    background-color: hotpink;
+  h1 {
+    font-size: 20px;
   }
 }
+@media screen and (max-width: 500px) {
+  #external-links {
+    position: absolute;
+    margin-left: 0px;
+    list-style-type: none;
+    padding-left: 0px;
+    width: 100%;
+    display: block;
+  }
+  main {
+    margin-top: 150px;
+  }
+}
+/*Code contained within the media screen overrides 
+code outside of the media screen, when screen specifications 
+are met */
