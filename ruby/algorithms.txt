@@ -1,0 +1,6 @@
+-Enter elevator and receive desired floor input
+-Until button value = desired floor input value
+	-View button and compare value to value of desired floor input.
+	-Move to next button.
+-Press button.
+
