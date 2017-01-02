@@ -4,3 +4,12 @@
 	-Move to next button.
 -Press button.
 
+Washing dishes:
+
+-Turn on sink
+-Until no dishes remaining
+	-pick up first dish
+	-clean dish and place in drying rack
+	-move to next dish
+-turn off sink
+
