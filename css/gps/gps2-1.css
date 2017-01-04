@@ -1,0 +1,33 @@
+body{
+  font-family: georgia;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  color:gray;
+}
+
+
+.column-1 {
+  display: inline-block;
+  width: 40%;
+  margin-left: 2%;
+  margin-right: 2%;
+  vertical-align: top;
+  border: 3px solid black;
+  padding: 5px;
+  background-color: gray;
+}
+.column-2{
+  display: inline-block;
+  width: 40%;
+  margin-left: 2%;
+  margin-right: 2%;
+  vertical-align: top;
+  border: 3px solid black;
+  padding: 5px;
+  background-color: gray;
+}
