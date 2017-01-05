@@ -9,6 +9,12 @@ def hamster_form
 	hamster_adoption = gets.chomp
 	puts "How old is your hamster?"
 	hamster_age = gets.chomp.to_i
+	puts "Hamster name: #{hamster_name}"
+	puts "Hamster volume: #{hamster_vol}"
+	puts "Hamster color: #{hamster_color}"
+	puts "Good candidate?: #{hamster_adoption}"
+	puts "Hamster age: #{hamster_age}"
 end
 
 hamster_form
+
