@@ -48,12 +48,12 @@ def vampire_form
 end
 
 puts "How many applicants to test?"
-	applicants = gets.chomp.to_i
-	counter = 0
-	while counter < applicants
-		vampire_form
+applicants = gets.chomp.to_i
+counter = 0
+while counter < applicants
+	vampire_form
 	counter +=1
-	end
-
+end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
