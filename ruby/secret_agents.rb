@@ -35,17 +35,18 @@ encrypted_input = gets.chomp
 
 def decrypt (encrypted_input)
 	encrypted_input_length = encrypted_input.length
-	decrypted_index = ""
+	decrypted_password = ""
 
 	encrypt_counter = 0
 	while encrypt_counter < encrypted_input_length
 		encrypted_letter = encrypted_input[encrypt_counter]
 		processing_index = "abcdefghijklmnopqrstuvwxyz".index(encrypted_letter)
 		decrypted_index = processing_index - 1
+		decrypted_password += "abcdefghijklmnopqrstuvwxyz"[decrypted_index]
 		encrypt_counter += 1
-		puts decrypted_index
-	end
 	
+	end
+	puts decrypted_password
 end
 
 decrypt (encrypted_input)
