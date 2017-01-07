@@ -52,9 +52,34 @@ def decrypt(encrypted_input)
 	puts decrypted_password
 end
 
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
+#encrypt("abc")
+#encrypt("zed")
+#decrypt("bcd")
+#decrypt("afe")
+# ecrypt(encrypt("swordfish")) 
+#As of now, the input doesn't seem to be 
+#passing from the first method to the second in a way
+#that allows the .length method to function. 
+#We are going to continue researching this, to try to figure out how to fix the issue.
 
+puts "Would you like to encrypt or decrypt a password?"
+user_selection = gets.chomp
+puts "please enter the password"
+user_password = gets.chomp
+loop do
+	if user_selection == "encrypt"
+		encrypt(user_password)
+		break
+	elsif user_selection == "decrypt"
+		decrypt(user_password)
+		break
+	else
+		puts "please type 'encrypt' or 'decrypt'"
+		user_selection = gets.chomp
+	end
+end
+
+
+
+	
 
