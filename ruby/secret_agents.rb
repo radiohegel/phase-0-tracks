@@ -26,6 +26,31 @@ end
 encrypt (user_input)
 
 #Decrypt method:
+	#take encrypted string
+	#call for the alphabet index value of each letter in the encrypted string.
+	#subtract one from each index value returned, and store in a new variable.
+	#print the new variable.
+puts "encryption?"
+encrypted_input = gets.chomp
+
+def decrypt (encrypted_input)
+	encrypted_input_length = encrypted_input.length
+	decrypted_index = ""
+
+	encrypt_counter = 0
+	while encrypt_counter < encrypted_input_length
+		encrypted_letter = encrypted_input[encrypt_counter]
+		processing_index = "abcdefghijklmnopqrstuvwxyz".index(encrypted_letter)
+		decrypted_index = processing_index - 1
+		encrypt_counter += 1
+		puts decrypted_index
+	end
 	
+end
+
+decrypt (encrypted_input)
+
+
+
 
 
