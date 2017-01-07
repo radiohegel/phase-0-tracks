@@ -11,13 +11,14 @@
 def encrypt (user_input)
 	
 	input_length = user_input.length
+	encrypted_input = ""
 	
 	counter = 0
 	while counter < input_length
-		puts user_input[counter].next
+		encrypted_input += user_input[counter].next
 		counter += 1
 	end
-	
+	puts encrypted_input
 
 end
 
