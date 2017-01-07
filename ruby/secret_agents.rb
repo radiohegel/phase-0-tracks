@@ -5,17 +5,22 @@
 		#if figure is a space, move past it
 	#print results
 
-	puts "please enter your password"
-	user_input = gets.chomp
 
-def encrypt (user_input)
+
+def encrypt(user_input)
 	
 	input_length = user_input.length
 	encrypted_input = ""
 	
 	counter = 0
 	while counter < input_length
-		encrypted_input += user_input[counter].next
+		encrypted_letter = user_input[counter].next
+			if encrypted_letter == "aa"
+				encrypted_input += "a"
+			else encrypted_letter = user_input[counter].next
+				encrypted_input += encrypted_letter
+			end
+
 		counter += 1
 	end
 	puts encrypted_input
@@ -23,17 +28,15 @@ def encrypt (user_input)
 end
 
 
-encrypt (user_input)
-
 #Decrypt method:
 	#take encrypted string
 	#call for the alphabet index value of each letter in the encrypted string.
 	#subtract one from each index value returned, and store in a new variable.
 	#print the new variable.
-puts "encryption?"
-encrypted_input = gets.chomp
 
-def decrypt (encrypted_input)
+
+
+def decrypt(encrypted_input)
 	encrypted_input_length = encrypted_input.length
 	decrypted_password = ""
 
@@ -49,9 +52,9 @@ def decrypt (encrypted_input)
 	puts decrypted_password
 end
 
-decrypt (encrypted_input)
-
-
-
+encrypt("abc")
+encrypt("zed")
+decrypt("bcd")
+decrypt("afe")
 
 
