@@ -37,10 +37,18 @@ client_info = {
 puts client_info
 
 
+puts "Do you have any changes? Please type 'yes' or 'no'"
+	user_edit = gets.chomp
+		if user_edit == "no"
+			puts client_info
+		else 
+			puts "Please type the category to be changed:"
+			key_to_change = gets.chomp.to_sym
+			puts "Please enter new data for #{key_to_change}:"
+			edited_data = gets.chomp
 
-#puts client_name 
-#puts client_location
-#puts client_decor
-#puts client_style_pref
-#puts client_contrast_pref
-puts client_rooms
+			client_info[key_to_change] = edited_data
+			puts client_info
+		end
+
+
