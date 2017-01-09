@@ -4,9 +4,6 @@
 #Move through name and determine if each letter is a vowel or consonant.
 #Pull index value for each letter from its respective index, and add 1.
 
-
-
-
 	
 def next_vowel(letter)
 	vowel = "aeiou".index(letter)
@@ -30,38 +27,42 @@ def next_consonant(letter)
 end
 
 
-puts "Please enter a name to code:"
-inputted_name = gets.chomp.downcase
-name_array = inputted_name.split(' ').reverse 
-first_name = name_array[0].chars
-last_name = name_array[1].chars
-coded_first_name_array =[]
-coded_last_name_array =[]
-first_name.each do |letter|
-	if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
-		letter = next_vowel(letter)
-	else 
-		letter = next_consonant(letter)
+loop do
+	puts "Please enter a name to code:"
+	inputted_name = gets.chomp.downcase
+	name_array = inputted_name.split(' ').reverse 
+	first_name = name_array[0].chars
+	last_name = name_array[1].chars
+	coded_first_name_array =[]
+	coded_last_name_array =[]
+	first_name.each do |letter|
+		if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
+			letter = next_vowel(letter)
+		else 
+			letter = next_consonant(letter)
+		end
+		coded_first_name_array << letter
 	end
-	coded_first_name_array << letter
-end
-last_name.each do |letter|
-	if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
-		letter = next_vowel(letter)
-	else 
-		letter = next_consonant(letter)
+	last_name.each do |letter|
+		if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
+			letter = next_vowel(letter)
+		else 
+			letter = next_consonant(letter)
+		end
+		coded_last_name_array << letter
 	end
-	coded_last_name_array << letter
-end
 
-coded_first_name = coded_first_name_array.join('')
-coded_last_name = coded_last_name_array.join('')
-coded_name = coded_first_name + " " + coded_last_name
+	coded_first_name = coded_first_name_array.join('')
+	coded_last_name = coded_last_name_array.join('')
+	coded_name = coded_first_name + " " + coded_last_name
 	puts coded_name
 
-#reversed_order = inputted_name.split(' ').reverse
-#characters = reversed_order[0].chars
-#characters += reversed_order[1].chars
-#characters.each do |characters|
-#	next_vowel(characters)	
-#end
+	puts "If you are finished, please type 'quit'. If you have another name to translate, please press enter."
+	user_response = gets.chomp
+	if user_response == "quit"
+		break
+	else
+	end
+end	
+
+
