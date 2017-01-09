@@ -10,22 +10,31 @@
 	
 def next_vowel(letter)
 	vowel = "aeiou".index(letter)
-	vowel_adjustment = vowel + 1
+	if vowel == 4
+		vowel_adjustment = 0
+	else
+		vowel_adjustment = vowel + 1
+	end
 	letter = "aeiou"[vowel_adjustment]
 	
 end
 
 def next_consonant(letter)
 	consonant = "bcdfghjklmnpqrstvwxyz".index(letter)
-	consonant_adjustment = consonant + 1
+	if consonant == 20
+		consonant_adjustment = 0
+	else
+		consonant_adjustment = consonant + 1
+	end
 	letter = "bcdfghjklmnpqrstvwxyz"[consonant_adjustment]
 end
 
 
 puts "Please enter a name to code:"
-inputted_name = gets.chomp.split(' ').reverse 
-first_name = inputted_name[0].chars
-last_name = inputted_name[1].chars
+inputted_name = gets.chomp.downcase
+name_array = inputted_name.split(' ').reverse 
+first_name = name_array[0].chars
+last_name = name_array[1].chars
 coded_first_name =[]
 coded_last_name =[]
 first_name.each do |letter|
