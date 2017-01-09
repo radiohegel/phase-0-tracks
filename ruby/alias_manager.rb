@@ -26,7 +26,7 @@ def next_consonant(letter)
 	letter = "bcdfghjklmnpqrstvwxyz"[consonant_adjustment]
 end
 
-
+name_bank = {}
 loop do
 	puts "Please enter a name to code:"
 	inputted_name = gets.chomp.downcase
@@ -57,12 +57,24 @@ loop do
 	coded_name = coded_first_name + " " + coded_last_name
 	puts coded_name
 
+	
+	name_bank[inputted_name] = coded_name
+	
+
+
 	puts "If you are finished, please type 'quit'. If you have another name to translate, please press enter."
 	user_response = gets.chomp
 	if user_response == "quit"
+		name_bank.each do |realname, codename|
+			puts "The codename for #{realname} is: #{codename}"
+		end
 		break
 	else
 	end
+	
+	#name_bank.each do |realname, codename|
+		#puts "The codename for #{realname} is #{codename}"
+	#end	
 end	
 
 
