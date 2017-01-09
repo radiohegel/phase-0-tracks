@@ -35,15 +35,15 @@ inputted_name = gets.chomp.downcase
 name_array = inputted_name.split(' ').reverse 
 first_name = name_array[0].chars
 last_name = name_array[1].chars
-coded_first_name =[]
-coded_last_name =[]
+coded_first_name_array =[]
+coded_last_name_array =[]
 first_name.each do |letter|
 	if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
 		letter = next_vowel(letter)
 	else 
 		letter = next_consonant(letter)
 	end
-	coded_first_name << letter
+	coded_first_name_array << letter
 end
 last_name.each do |letter|
 	if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
@@ -51,12 +51,13 @@ last_name.each do |letter|
 	else 
 		letter = next_consonant(letter)
 	end
-	coded_last_name << letter
+	coded_last_name_array << letter
 end
 
-
-	puts coded_first_name
-	puts coded_last_name
+coded_first_name = coded_first_name_array.join('')
+coded_last_name = coded_last_name_array.join('')
+coded_name = coded_first_name + " " + coded_last_name
+	puts coded_name
 
 #reversed_order = inputted_name.split(' ').reverse
 #characters = reversed_order[0].chars
