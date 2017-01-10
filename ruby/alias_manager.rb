@@ -1,8 +1,11 @@
-#take name input and separate first and last name into array
-#reverse array
-#Make strings of vowels and consonants to use as indices. 
-#Move through name and determine if each letter is a vowel or consonant.
-#Pull index value for each letter from its respective index, and add 1.
+#Take name input and make arrays of first and last names.
+#reverse the arrays, so first name and last name are switched.
+#define respective methods for advancing vowels and consonants.
+	#use total vowel/consonant characters as strings against which to compare letters in name arrays
+	#find index position of letters, and add 1 to adjust it to the following letter
+#iterate through name arrays to determine if each letter is a vowel or consonant, and put it through the according method.
+#store results as new variables, and convert back to strings.
+
 
 	
 def next_vowel(letter)
@@ -72,9 +75,7 @@ loop do
 	else
 	end
 	
-	#name_bank.each do |realname, codename|
-		#puts "The codename for #{realname} is #{codename}"
-	#end	
+	
 end	
 
 
