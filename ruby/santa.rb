@@ -16,24 +16,47 @@ class Santa
 		puts "That was a good #{cookie}!"
 	end
 
+	def celebrate_birthday
+		@age += 1
+	end
+
+	def get_mad_at(reindeer_name)
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking << reindeer_name
+		puts @reindeer_ranking
+	end
+
+	def gender=(new_gender)
+		@gender = new_gender
+		puts @gender
+	end
+
+
+
 end
+
+brian = Santa.new("man", "white")
+brian.get_mad_at("Dancer")
+
+brian.gender = "woman"
+
 santas = []
 
-loop do
-	puts "Do you have a santa to register? Please enter 'yes' or 'no':"
-	user_response = gets.chomp
-		if user_response == "yes"
-			puts "Please enter your gender:"
-			santa_gender = gets.chomp
-			puts "Please enter your ethnicity:"
-			santa_ethnicity = gets.chomp
-			santas << Santa.new(santa_gender, santa_ethnicity)
-		elsif user_response == "no"
-			break
-		else
-			puts "Sorry, I didn't catch that."
-		end
-end
+# loop do
+# 	puts "Do you have a santa to register? Please enter 'yes' or 'no':"
+# 	user_response = gets.chomp
+# 		if user_response == "yes"
+# 			puts "Please enter your gender:"
+# 			santa_gender = gets.chomp
+# 			puts "Please enter your ethnicity:"
+# 			santa_ethnicity = gets.chomp
+# 			santas << Santa.new(santa_gender, santa_ethnicity)
+# 		elsif user_response == "no"
+# 			break
+# 		else
+# 			puts "Sorry, I didn't catch that."
+# 		end
+# end
 
 p santas
 
