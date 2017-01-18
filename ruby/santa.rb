@@ -26,6 +26,14 @@ class Santa
 		puts @reindeer_ranking
 	end
 
+	def age
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+
 	def gender=(new_gender)
 		@gender = new_gender
 		puts @gender
@@ -39,6 +47,12 @@ brian = Santa.new("man", "white")
 brian.get_mad_at("Dancer")
 
 brian.gender = "woman"
+
+puts brian.age
+brian.celebrate_birthday
+puts brian.age
+
+puts brian.ethnicity
 
 santas = []
 
