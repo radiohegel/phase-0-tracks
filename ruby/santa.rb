@@ -1,4 +1,6 @@
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -7,6 +9,8 @@ class Santa
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0
 	end
+
+#Instance methods: 
 
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"
@@ -26,22 +30,9 @@ class Santa
 		puts @reindeer_ranking
 	end
 
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
-	def gender=(new_gender)
-		@gender = new_gender
-		puts @gender
-	end
-
-
-
 end
+
+#Driver code
 
 brian = Santa.new("man", "white")
 brian.get_mad_at("Dancer")
@@ -54,31 +45,39 @@ puts brian.age
 
 puts brian.ethnicity
 
-santas = []
+puts brian.gender
 
-# loop do
-# 	puts "Do you have a santa to register? Please enter 'yes' or 'no':"
-# 	user_response = gets.chomp
-# 		if user_response == "yes"
-# 			puts "Please enter your gender:"
-# 			santa_gender = gets.chomp
-# 			puts "Please enter your ethnicity:"
-# 			santa_ethnicity = gets.chomp
-# 			santas << Santa.new(santa_gender, santa_ethnicity)
-# 		elsif user_response == "no"
-# 			break
-# 		else
-# 			puts "Sorry, I didn't catch that."
-# 		end
-# end
-
-p santas
-
-#EXAMPLES:
-#female/black; n/a/Latin@; male/Asian
+brian.gender = "fluid"
+puts brian.gender
 
 
-# gregory = Santa.new
+#UI for registering santas, also used as driver code for testing program initially. 
 
-# gregory.speak
-# gregory.eat_milk_and_cookies("sugar cookie")
+# santas = []
+
+# # loop do
+# # 	puts "Do you have a santa to register? Please enter 'yes' or 'no':"
+# # 	user_response = gets.chomp
+# # 		if user_response == "yes"
+# # 			puts "Please enter your gender:"
+# # 			santa_gender = gets.chomp
+# # 			puts "Please enter your ethnicity:"
+# # 			santa_ethnicity = gets.chomp
+# # 			santas << Santa.new(santa_gender, santa_ethnicity)
+# # 		elsif user_response == "no"
+# # 			break
+# # 		else
+# # 			puts "Sorry, I didn't catch that."
+# # 		end
+# # end
+
+# p santas
+
+# #EXAMPLES:
+# #female/black; n/a/Latin@; male/Asian
+
+
+# # gregory = Santa.new
+
+# # gregory.speak
+# # gregory.eat_milk_and_cookies("sugar cookie")
