@@ -1,6 +1,6 @@
 class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -32,23 +32,44 @@ class Santa
 
 end
 
-#Driver code
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-brian = Santa.new("man", "white")
-brian.get_mad_at("Dancer")
+puts "How many santas would you like to generate?"
+santa_qty = gets.chomp.to_i
+counter = 0
 
-brian.gender = "woman"
+santa_qty.times do
+	new_santa_gender = example_genders.sample
+	new_santa_ethnicity = example_ethnicities.sample
 
-puts brian.age
-brian.celebrate_birthday
-puts brian.age
+	santa = Santa.new(new_santa_gender, new_santa_ethnicity)
+	santa.age = rand(1..140)
 
-puts brian.ethnicity
+	p santa.gender, santa.ethnicity, santa.age
 
-puts brian.gender
+	counter += 1
+end
 
-brian.gender = "fluid"
-puts brian.gender
+
+
+# #Driver code
+
+# brian = Santa.new("man", "white")
+# brian.get_mad_at("Dancer")
+
+# brian.gender = "woman"
+
+# puts brian.age
+# brian.celebrate_birthday
+# puts brian.age
+
+# puts brian.ethnicity
+
+# puts brian.gender
+
+# brian.gender = "fluid"
+# puts brian.gender
 
 
 #UI for registering santas, also used as driver code for testing program initially. 
