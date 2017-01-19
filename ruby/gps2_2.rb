@@ -77,3 +77,15 @@ end
 
 print_list(grocery_list)
 
+#REFLECTION
+#This was definitely good practice with pseudocoding. I'm still feeling a little shakey about
+#best practices for pseudocoding, but I'm getting a better feel for it.
+#Marcela and I decided to use hashes so we could store the qty as a value for each list item as a value.
+#We figured this would be advantageous in that it simplifies keeping track of the item quantity pairs.
+#A method returns whatever the result is of the operation in the final line (unless an exlicit return is specified). That return value
+#It seems that you can pass pretty much any kind of data into a method, so long as you treat the argument
+#according to what it is throughout the method. We passed strings, hashes, and integers into our methods.
+#You can pass information from one method to another by returning a variable value and passing it into the next method.
+#I think that the idea of dangerous methods makes a lot more sense to me now. I'm still confused a bit about 
+#exactly when a hash is more advantageous than an array, and vice versa.
+
