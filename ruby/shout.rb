@@ -33,5 +33,10 @@ end
 driver = Angry_Driver.new
 p driver.yell_angrily("Get out of my lane")
 
+p driver.yelling_happily("Finally, they're off the road")
+
 camper = Happy_Camper.new
 p camper.yelling_happily("Today is perfect")
+
+p camper.yell_angrily("I don't want to go home yet")
+
