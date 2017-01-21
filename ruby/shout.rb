@@ -19,6 +19,7 @@ module Shout
 
 	def yelling_happily(words)
 		words + "!" + " :)"
+	end
 end
 
 class Angry_Driver
@@ -30,7 +31,7 @@ class Happy_Camper
 end
 
 driver = Angry_Driver.new
-driver.Shout("Get out of my lane")
+p driver.yell_angrily("Get out of my lane")
 
 camper = Happy_Camper.new
-camper.Shout("Today is perfect")
+p camper.yelling_happily("Today is perfect")
