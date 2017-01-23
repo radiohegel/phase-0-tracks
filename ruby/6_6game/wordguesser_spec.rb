@@ -15,4 +15,9 @@ describe Wordguesser do
 		expect(word.makefeedbackarray).to eq ["_", "_", "_", "_", "_", "_", "_", "_"]
 	end
 	
+	it "changes _ to letter in feedback array when guesses are matched" do
+		expect(word.checkguess("t")).to eq ["t", "_", "_", "t", "_", "_", "_", "_"]
+	end
+
+	
 end
