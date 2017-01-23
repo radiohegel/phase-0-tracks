@@ -49,9 +49,20 @@ class Wordguesser
 
 end
 
+
+#COMMENT OUT SECTION BELOW TO RUN RSPEC TEST (I'm confused why it runs in the rspec, but figure I'll turn it in then find out in office hours)
+
+def hideword
+	100.times do
+		puts "hiding the word"
+	end
+end
+
 puts "Player 1, please enter your secret word:"
 inputted_word = gets.chomp
 word = Wordguesser.new(inputted_word)
+hideword
+
 
 guesscount = 0
 loop do
@@ -79,7 +90,7 @@ loop do
 	end
 end
 
-
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 # test = Wordguesser.new("testword")
