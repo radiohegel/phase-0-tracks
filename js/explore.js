@@ -12,6 +12,7 @@ function printBackwards(word) {
 	}
 }
 
+
 printBackwards("hello")
 
 var test = "yes";
