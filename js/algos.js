@@ -80,6 +80,7 @@
 				}	
 			stringArray.push(newString);
 		}
+		console.log(stringArray);
 		return stringArray;
 	}
 
@@ -101,9 +102,9 @@ compareObjects(testObject1, testObject2);
 //Driver code for generateRandom:
 	//PSUEDOCODE:
 		//Set up a loop to run 10 times. 
-		//For each iteration, run generateRandom(1), and save result as a variable.
+		//For each iteration, run generateRandom(3), and save result as a variable.
 		//Feed variable resulting from generateRandom into findLongestPhrase.
 for(var i = 0; i < 10; i++) {
-	var wordEntries = generateRandom(1);
+	var wordEntries = generateRandom(3);
 	findLongestPhrase(wordEntries);
 }
