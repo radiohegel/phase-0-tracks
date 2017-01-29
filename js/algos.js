@@ -1,32 +1,32 @@
-//Make function that will take array of words/phrases and return the longest.
-//define a longestword variable, and set it equal to an empty string.
-//loop through the inputted array, and compare the length of each element to the length of longestword.
-//if the array element is longer, change longestword to equal the array element.
-//if the array element is not longer, skip to the next element.
-//once loop is completed, return longestword.
+//PSUEDOCODE FOR findLongestPhrase:
 
+	//Make function that will take array of words/phrases and return the longest.
+	//define a longestword variable, and set it equal to an empty string.
+	//loop through the inputted array, and compare the length of each element to the length of longestword.
+	//if the array element is longer, change longestword to equal the array element.
+	//if the array element is not longer, skip to the next element.
+	//once loop is completed, return longestword.
 
-// var phraseEntries = ["test", "testing", "longesttest", "shorter"];
+function findLongestPhrase(phraseEntries) {
+	var length = 0
+	var longest;
+	for(var i=0; i < phraseEntries.length; i++)
+		if (phraseEntries[i].length > length) {
+			var length = phraseEntries[i].length;
+			longest = phraseEntries[i];
+		}
+	console.log(longest);
+}
 
-// function findLongestPhrase(phraseEntries) {
-// 	var length = 0
-// 	var longest;
-// 	for(var i=0; i < phraseEntries.length; i++)
-// 		if (phraseEntries[i].length > length) {
-// 			var length = phraseEntries[i].length;
-// 			longest = phraseEntries[i];
-// 		}
-// 	console.log(longest);
-// }
+//------------------------------------------------------------------------------------
 
-//Make a function that compares two objects and returns true if they share a matching key/value pair.
-//Make two arrays - one to contain each of the objects key/value pairs.
-//Make a test variable and set it to false
-//Loop through the arrays, comparing each element in one to each element in the other array
-//create an if conditional that will change the test variable value to true, if any of the values are equivalent.
+//PSUEDOCODE FOR compareObjects:
 
-var testObject1 = {test: "yes", eggs: "no", bla: "bla"};
-var testObject2 = {blue: "perhaps", red: "no", test: "yes"};
+	//Make a function that compares two objects and returns true if they share a matching key/value pair.
+	//Make two arrays - one to contain each of the objects key/value pairs.
+	//Make a test variable and set it to false
+	//Loop through the arrays, comparing each element in one to each element in the other array
+	//create an if conditional that will change the test variable value to true, if any of the values are equivalent.
 
 
 function compareObjects(object1, object2) {
@@ -59,7 +59,23 @@ function compareObjects(object1, object2) {
 	console.log(objectsEqual);
 }
 
+//------------------------------------------------------------------------------------
 
+//PSUEDOCODE FOR generateRandom:
+
+//Make a function that receives an integer and returns an array of strings 
+//with the length designated by the integer argument.
+//
+
+//------------------------------------------------------------------------------------
+
+//Driver code for findLongestPhrase:
+var phraseEntries = ["test", "testing", "longesttest", "shorter"];
+findLongestPhrase(phraseEntries);
+
+//------------------------------------------------------------------------------------
+
+//Driver code for compareObjects:
+var testObject1 = {test: "yes", eggs: "no", bla: "bla"};
+var testObject2 = {blue: "perhaps", red: "no", test: "yes"};
 compareObjects(testObject1, testObject2);
-
-// findLongestPhrase(phraseEntries);
