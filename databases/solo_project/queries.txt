@@ -1,0 +1,47 @@
+1)	
+	sqlite> SELECT * FROM gym_members;
+	1|Rob|2|true|1
+	2|Beatrice|6|true|2
+	3|Tim|0|false|3
+
+
+2)
+	sqlite> UPDATE gym_members SET belay_certified="true" WHERE id=3;
+	sqlite> SELECT * FROM gym_members WHERE id=3;
+	3|Tim|0|true|3
+
+
+3)
+	sqlite> SELECT * FROM gym_members, climbing_style WHERE gym_members.preferred_climbing_style = climbing_style.id;
+	1|Rob|2|true|1|1|sport
+	2|Beatrice|6|true|2|2|trad
+	3|Tim|0|true|3|3|bouldering
+
+
+4)
+	sqlite> SELECT gym_members.name, climbing_style.style FROM gym_members JOIN climbing_style ON gym_members.preferred_climbing_style = climbing_style.id;
+	Rob|sport
+	Beatrice|trad
+	Tim|bouldering
+
+
+5)
+	sqlite> DELETE FROM gym_members WHERE name="Rob";
+	sqlite> SELECT * FROM gym_members;
+	2|Beatrice|6|true|2
+	3|Tim|0|true|3
+
+Release 3:
+
+sqlite> SELECT * FROM gym_members CROSS JOIN climbing_style;
+2|Beatrice|6|true|2|1|sport
+2|Beatrice|6|true|2|2|trad
+2|Beatrice|6|true|2|3|bouldering
+3|Tim|0|true|3|1|sport
+3|Tim|0|true|3|2|trad
+3|Tim|0|true|3|3|bouldering
+sqlite> 
+
+sqlite> SELECT gym_members.name, gym_members.belay_certified, climbing_style.style FROM gym_members LEFT JOIN climbing_style ON gym_members.preferred_climbing_style = climbing_style.id;
+Beatrice|true|trad
+Tim|true|bouldering
