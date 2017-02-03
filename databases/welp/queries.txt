@@ -1,0 +1,16 @@
+2)
+	sqlite> SELECT * FROM reviews JOIN business ON reviews.business_id = business.id JOIN users ON reviews.users_id = users.id;
+	1|3|meh|1|1|1|Lotus Yoga|1|Bradford|Pitt
+	2|1|bad|1|2|1|Lotus Yoga|2|Mandy|Kaling
+	3|5|great|3|2|3|Sushi World|2|Mandy|Kaling
+
+3)	
+	sqlite> SELECT reviews.stars, reviews.comment, business.name, users.first_name FROM reviews JOIN business ON reviews.business_id = business.id JOIN users ON reviews.users_id = users.id;
+	3|meh|Lotus Yoga|Bradford
+	1|bad|Lotus Yoga|Mandy
+	5|great|Sushi World|Mandy
+
+4)
+	sqlite> SELECT reviews.stars, reviews.comment, business.name, users.first_name FROM reviews JOIN business ON reviews.business_id = business.id JOIN users ON reviews.users_id = users.id WHERE business.id = 1;
+	3|meh|Lotus Yoga|Bradford
+	1|bad|Lotus Yoga|Mandy
