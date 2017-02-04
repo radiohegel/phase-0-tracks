@@ -10,19 +10,28 @@ db = SQLite3::Database.open "climb_rater.db"
 
 #METHODS:
 
-#Submit feedback.
-#Add data to reviews table
+#Collect user feedback and enter into db.
 
-def add_feedback(db, attempts, rating, grade, climber_id, problem_id)
+def get_feedback(db, climber_id_number, selected_problem)
 
-	db.execute "INSERT INTO feedback VALUES (?, ?, ?, ?, ?)", [attempts, rating, grade, climber_id, problem_id]
+	puts "How many times did it take you to climb this problem?"
+	climber_attempts = gets.chomp.to_i
+				
+	puts "How many stars out of 5 would you rate this problem?"
+	climber_rating = gets.chomp.to_i
+				
+	if climber_rating > 5
+		climber_rating = 5
+	end
+
+	puts "What grade of difficulty would you give this problem?"
+	climber_grade = gets.chomp.to_i
+
+	db.execute "INSERT INTO feedback VALUES (#{climber_attempts}, #{climber_rating}, #{climber_grade}, #{climber_id_number}, #{selected_problem})"			
+
+	puts "Thanks for your feedback! It has been successfully added."
 
 end
-
-# add_feedback(db, 2, 2, 2, 1, 1)
-# add_feedback(db, 4, 4, 4, 2, 1)
-
-
 
 #Calculate avg. attempts
 
@@ -90,54 +99,64 @@ loop do
 	selected_problem = gets.chomp.to_i
 	feedback_array = db.execute("SELECT * FROM feedback WHERE problem_id=#{selected_problem}")
 
-	#Prompt user to choose to either leave feedback, or view avgs/all feedback for the climb.
+	if feedback_array.length == 0
+		puts "No one has entered feecback for that problem yet! Would you like to leave the first feedback for it? Please type 'yes' or 'no'."
+		user_answer = gets.chomp
 
-	loop do
-		puts "Great! Please type 'avg' to see average feedback from other climbers, type 'all' to see all feedback, or type 'fb' to leave feedback of your own!"
-		user_selection = gets.chomp
+			if user_answer == "yes"
+				get_feedback(db, climber_id_number, selected_problem)
 
-		if user_selection == "avg"
-			puts "On average, climbers send this problem in #{calculate_attempts(db, feedback_array)} tries, rate it #{calculate_quality(db, feedback_array)} out of 5 stars, and grade it V#{calculate_grade(db, feedback_array)}."
-			break
+			else
+				puts "Do you want to look at a different problem?"
+				user_answer = gets.chomp
 
-		elsif user_selection == "all"
-			list_feedback(db, selected_problem)
-			break
-
-	#Prompt user for their no. of attempts, 1-5 star quality rating, and difficulty grade.
-
-		elsif user_selection == "fb"
-			puts "How many times did it take you to climb this problem?"
-			climber_attempts = gets.chomp.to_i
-			
-			puts "How many stars out of 5 would you rate this problem?"
-			climber_rating = gets.chomp.to_i
-			
-			if climber_rating > 5
-				climber_rating = 5
+					if user_answer == "yes"
+						nil
+					else
+						puts "Happy climbing!"
+						break
+					end
+					
 			end
 
-			puts "What grade of difficulty would you give this problem?"
-			climber_grade = gets.chomp.to_i
-			
-			add_feedback(db, climber_attempts, climber_rating, climber_grade, climber_id_number, selected_problem)
-
-			puts "Thanks for your feedback! It has been successfully added."
-			break
-
-		else
-			puts "Sorry, that wasn't a valid selection"
-		end	
-
-	end
-
-	puts "Do you have any other problems to look up? Please type 'yes' or 'no':"
-	user_response = gets.chomp
-
-	if user_response == "no"
-		break
 	else
-		nil
+
+		#Prompt user to choose to either leave feedback, or view avgs/all feedback for the climb.
+
+		loop do
+			puts "Great! Please type 'avg' to see average feedback from other climbers, type 'all' to see all feedback, or type 'fb' to leave feedback of your own!"
+			user_selection = gets.chomp
+
+			if user_selection == "avg"
+				puts "On average, climbers send this problem in #{calculate_attempts(db, feedback_array)} tries, rate it #{calculate_quality(db, feedback_array)} out of 5 stars, and grade it V#{calculate_grade(db, feedback_array)}."
+				break
+
+			elsif user_selection == "all"
+				list_feedback(db, selected_problem)
+				break
+
+		#Prompt user for their no. of attempts, 1-5 star quality rating, and difficulty grade.
+
+			elsif user_selection == "fb"
+				get_feedback(db, climber_id_number, selected_problem)
+				break
+
+			else
+				puts "Sorry, that wasn't a valid selection"
+			end	
+
+		end
+
+		puts "Do you have any other problems to look up? Please type 'yes' or 'no':"
+		user_response = gets.chomp
+
+		if user_response == "no"
+			puts "Happy climbing!"
+			break
+		else
+			nil
+		end
+
 	end
 
 end	
