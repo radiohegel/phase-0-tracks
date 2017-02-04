@@ -12,11 +12,10 @@ db = SQLite3::Database.open "climb_rater.db"
 #Submit feedback.
 #Add data to reviews table
 
-def add_review(db, attempts, rating, grade, climber_id, problem_id)
+def add_feedback(db, attempts, rating, grade, climber_id, problem_id)
 	db.execute "INSERT INTO feedback VALUES (?, ?, ?, ?, ?)", [attempts, rating, grade, climber_id, problem_id]
 end
 
-add_review(db, 1, 5, 5, 1, 1)
 #Calculate avg. attempts
 
 #Calculate avg. quality rating
