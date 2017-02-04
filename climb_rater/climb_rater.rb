@@ -16,12 +16,46 @@ def add_feedback(db, attempts, rating, grade, climber_id, problem_id)
 	db.execute "INSERT INTO feedback VALUES (?, ?, ?, ?, ?)", [attempts, rating, grade, climber_id, problem_id]
 end
 
+# add_feedback(db, 2, 2, 2, 1, 1)
+# add_feedback(db, 4, 4, 4, 2, 1)
+
+feedback_array = db.execute("SELECT * FROM feedback")
+p feedback_array
+p feedback_array.class
 #Calculate avg. attempts
+
+def calculate_attempts(db, feedback)
+	attempts_total = 0
+	feedback.each do |response|
+		attempts_total += response[0]
+	end	
+	avg_attempts = attempts_total/feedback.length
+
+end
 
 #Calculate avg. quality rating
 
-#Calculate avg. 
+def calculate_quality(db, feedback)
+	quality_total = 0
+	feedback.each do |response|
+		quality_total += response[0]
+	end	
+	avg_quality = quality_total/feedback.length
 
+end
+
+#Calculate avg. grade
+
+def calculate_grade(db, feedback)
+	grade_total = 0
+	feedback.each do |response|
+		grade_total += response[0]
+	end	
+	avg_grade = grade_total/feedback.length
+
+end
+
+p calculate_grade(db, feedback_array)
 #USER INTERFACE:
 
 #Greet user and ask what climb they need to access
