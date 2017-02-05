@@ -116,7 +116,7 @@ loop do
 						puts "Happy climbing!"
 						break
 					end
-					
+
 			end
 
 	else
