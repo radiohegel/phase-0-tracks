@@ -1,0 +1,3 @@
+2) One of the central elements to the Linux design philosophy is the choice to assume that users know what they are doing, and what they want to do with their computer. Because of this, the operating system will allow users to do whatever they please, regardless of potential resulting damage. 
+3) A VPS is a server that functions as its own unit, thanks to software partitioning, despite sharing hardware with other VPS units. A benefit of using a VPS is that you gain the control of having a dedicated machine, with much lower costs.
+4) Running programs in root allows for the possibility of writing damage to system files, rather than a home folder. It removes a lot of damage control.
