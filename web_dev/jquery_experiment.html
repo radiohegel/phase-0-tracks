@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#firstbutton").click(function() {
+				$(".class").hide();
+			});
+			$("#secondbutton").click(function() {
+				$("h2").fadeOut("slow");
+			});
+		});
+	</script>
+</head>
+<body>
+<h1 class="header">This is the first header</h1>
+<h2 class="header">This is the second header</h2>
+<p>This is a paragraph, but out of class</p>
+<p class="class"> This is also a paragraph, but it is in the class...</p>
+<p class="class"> Also a paragraph in the class.</p>
+<button id="firstbutton">I wonder what this does?</button>
+<button id="secondbutton">And this one?</button>
+
+</body>
+</html>
