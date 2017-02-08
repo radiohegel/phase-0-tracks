@@ -4,7 +4,14 @@
 	<title>New ERB</title>
 </head>
 <body>
-<p>Test</p>
+<h1>The 17th student is:</h1>
 
+<% @students.each do |student| %>
+	<% if student['id'] == 17 %>
+		<p><%= student['name'] %></p>
+	<% else %>
+		<% nil %>
+	<% end %>
+<% end %>
 </body>
 </html>
