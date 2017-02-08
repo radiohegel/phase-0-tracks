@@ -50,3 +50,32 @@ end
 get '/contact' do
   "Please send questions to 19 Nonexistent St."
 end
+
+#add a GET route that takes a name and congratulates them.
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Congratulations, #{name}!"
+  else
+    "Congratulations!!"
+  end
+end
+
+#add a GET route that takes to numbers and adds them together.
+
+get '/return_sum' do
+  num1 = params[:firstnum].to_i
+  num2 = params[:secondnum].to_i
+
+  sum = num1 + num2
+
+  sum.to_s
+
+end
+
+
+
+
+
+
